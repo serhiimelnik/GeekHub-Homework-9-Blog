@@ -1,0 +1,4 @@
+melnik_blog:
+    resource: "@MelnikBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
