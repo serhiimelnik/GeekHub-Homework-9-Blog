@@ -1,3 +1,30 @@
 melnik_blog_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: MelnikBlogBundle:Default:index }
+    pattern:  /
+    defaults: { _controller: MelnikBlogBundle:Page:index }
+    requirements:
+        _method:  GET
+
+melnik_blog_about:
+    pattern:  /about
+    defaults: { _controller: MelnikBlogBundle:Page:about }
+    requirements:
+        _method:  GET
+
+melnik_blog_guestbook:
+    pattern:  /guestbook
+    defaults: { _controller: MelnikBlogBundle:Page:guestbook }
+    requirements:
+        _method:  GET|POST
+
+melnik_blog_sidebar:
+    pattern:  /sidebar
+    defaults: { _controller: MelnikBlogBundle:Page:sidebar }
+    requirements:
+        _method:  GET
+
+melnik_blog_blog_show:
+    pattern:  /{id}/{slug}
+    defaults: { _controller: MelnikBlogBundle:Blog:show }
+    requirements:
+        _method:  GET
+        id: \d+

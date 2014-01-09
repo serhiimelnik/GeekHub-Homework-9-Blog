@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent () }}
+
+    {% stylesheets
+        '@MelnikBlogBundle/Resources/public/css/blog.css'
+        '@MelnikBlogBundle/Resources/public/css/sidebar.css'
+    %}
+    <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block sidebar %}
+    {% render url('melnik_blog_sidebar') %}
+{% endblock %}

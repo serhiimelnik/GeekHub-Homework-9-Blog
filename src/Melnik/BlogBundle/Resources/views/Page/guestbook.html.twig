@@ -1,0 +1,27 @@
+{% extends 'MelnikBlogBundle::layout.html.twig' %}
+
+{% block title %}GuestBook{% endblock%}
+
+{% block body %}
+    <header>
+        <h1>GuestBook</h1>
+    </header>
+    <form action="{{ path('melnik_blog_guestbook') }}" method="post" {{ form_enctype(form) }} class="melnik">
+        {{ form_errors(form) }}
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.text) }}
+
+        {{ form_rest(form) }}
+
+        <input type="submit" value="Submit" />
+    </form>
+    {% for enquiry in enquirys %}
+        <p class="lead">Name: {{ enquiry.name }}</p></br>
+        <p class="lead">Email: <a href="mailto:#">{{ enquiry.email }}</a></p></br>
+        <blockquote>
+            <p>{{ enquiry.text }}</p></br>
+        </blockquote>
+    {% endfor %}
+{% endblock %}
