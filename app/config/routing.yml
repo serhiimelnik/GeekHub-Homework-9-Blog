@@ -2,3 +2,5 @@ melnik_blog:
     resource: "@MelnikBlogBundle/Resources/config/routing.yml"
     prefix:   /
 
+_user_bundle:
+    resource: "@MelnikUserBundle/Resources/config/routing.yml"
